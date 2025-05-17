@@ -25,9 +25,10 @@ jobs:
     - name: Download last content artifact (if exists)
       uses: actions/download-artifact@v4
       with:
-        name: last-content
-        path: .
-
+       name: last-content
+       path: .
+      continue-on-error: true
+  
     - name: Run thread checker
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
